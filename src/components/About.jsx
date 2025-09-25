@@ -25,22 +25,32 @@ const About = () => {
   };
 
   const skillCategories = [
-    { 
-      title: 'Frontend', 
-      skills: portfolioData.about.skills.frontend,
-      className: 'frontend'
-    },
-    { 
-      title: 'Tools', 
-      skills: portfolioData.about.skills.tools,
-      className: 'tools'
-    },
-    { 
-      title: 'Learning', 
-      skills: portfolioData.about.skills.learning,
-      className: 'learning'
-    }
+    { title: 'Frontend', skills: portfolioData.about.skills.frontend, className: 'frontend' },
+    { title: 'Backend', skills: portfolioData.about.skills.backend, className: 'backend' },
+    { title: 'Programs', skills: portfolioData.about.skills.programs, className: 'programs' },
+    { title: 'Tools', skills: portfolioData.about.skills.tools, className: 'tools' },
+    { title: 'Learning', skills: portfolioData.about.skills.learning, className: 'learning' }
   ];
+
+  const deviconClassMap = {
+    React: 'devicon-react-original colored',
+    JavaScript: 'devicon-javascript-plain colored',
+    HTML5: 'devicon-html5-plain colored',
+    CSS3: 'devicon-css3-plain colored',
+    'Tailwind CSS': 'devicon-tailwindcss-plain colored',
+    'Node.js': 'devicon-nodejs-plain colored',
+    Express: 'devicon-express-original',
+    MongoDB: 'devicon-mongodb-plain colored',
+    Git: 'devicon-git-plain colored',
+    'VS Code': 'devicon-vscode-plain colored',
+    Figma: 'devicon-figma-plain colored',
+    Photoshop: 'devicon-photoshop-plain colored',
+    TypeScript: 'devicon-typescript-plain colored',
+    'Three.js': 'devicon-threejs-original',
+    Java: 'devicon-java-plain colored',
+    Python: 'devicon-python-plain colored',
+    'C++': 'devicon-cplusplus-plain colored'
+  };
 
   return (
     <section id="about" className="about">
@@ -108,7 +118,10 @@ const About = () => {
                       whileHover={{ scale: 1.05 }}
                       className={`skill-tag ${category.className}`}
                     >
-                      {skill}
+                      <span className="skill-icon-wrapper">
+                        <i className={deviconClassMap[skill] || 'devicon-plain'} aria-hidden="true"></i>
+                      </span>
+                      <span className="skill-label">{skill}</span>
                     </motion.span>
                   ))}
                 </div>

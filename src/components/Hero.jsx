@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
+import profilePic from '../assets/second pic.png';
 import './Hero.css'; // Assume you have some basic styles here
 
 const Hero = () => {
@@ -120,10 +121,7 @@ const Hero = () => {
               }}
               className="avatar"
             >
-              {/* Replace this with your actual photo or Lottie component */}
-              <div className="avatar-text">
-                {portfolioData.name.split(' ').map(n => n[0]).join('')}
-              </div>
+              <img src={profilePic} alt={portfolioData.name} style={{ width: '92%', height: '92%', borderRadius: '9999px', objectFit: 'cover', boxShadow: '0 8px 24px rgba(0,0,0,0.45)' }} />
             </motion.div>
             
             {/* Floating elements for visual interest */}
@@ -139,6 +137,11 @@ const Hero = () => {
             />
           </div>
         </motion.div>
+        {/* <div className="hero-avatar">
+          <div className="avatar">
+            <img src="./src/assets/second pic.jpg" alt="Your Name" className="avatar-inner" />
+          </div>
+        </div> */}
       </div>
 
       {/* Scroll indicator */}
