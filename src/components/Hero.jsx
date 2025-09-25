@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
+import './Hero.css'; // Assume you have some basic styles here
 
 const Hero = () => {
   const containerVariants = {

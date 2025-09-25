@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
+import './Contact.css'; // Assume you have some basic styles here
 
 const Contact = () => {
   const [formData, setFormData] = useState({

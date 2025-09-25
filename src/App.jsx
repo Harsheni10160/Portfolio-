@@ -5,8 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import './App.css';
-import './index.css';
+import './index.css'; // keep only the global styles
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
       <About />
       <Projects />
       <Contact />
-      
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">

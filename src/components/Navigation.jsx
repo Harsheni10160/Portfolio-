@@ -1,6 +1,7 @@
 // src/components/Navigation.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import './Navigation.css'; // Assume you have some basic styles here
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);

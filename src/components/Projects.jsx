@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
+import './Projects.css'; // Assume you have some basic styles here
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);

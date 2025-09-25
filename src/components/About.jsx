@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
+import './About.css'; // Assume you have some basic styles here
 
 const About = () => {
   const containerVariants = {
