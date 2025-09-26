@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
-import profilePic from '../assets/second pic.png';
+import profilePic from '../assets/second pic.jpg';
 import './Hero.css'; // Assume you have some basic styles here
 
 const Hero = () => {
@@ -137,11 +137,6 @@ const Hero = () => {
             />
           </div>
         </motion.div>
-        {/* <div className="hero-avatar">
-          <div className="avatar">
-            <img src="./src/assets/second pic.jpg" alt="Your Name" className="avatar-inner" />
-          </div>
-        </div> */}
       </div>
 
       {/* Scroll indicator */}

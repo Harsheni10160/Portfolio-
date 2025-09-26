@@ -1,9 +1,8 @@
-// src/components/Projects.jsx - CSS Version
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { Github, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
-import './Projects.css'; // Assume you have some basic styles here
+import './Projects.css';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -84,18 +83,6 @@ const Projects = () => {
 
                 <div className="project-links">
                   <motion.a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="project-link"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </motion.a>
-                  <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -171,15 +158,6 @@ const Projects = () => {
                   </div>
 
                   <div className="modal-actions">
-                    <a
-                      href={selectedProject.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      <ExternalLink size={20} />
-                      View Live Demo
-                    </a>
                     <a
                       href={selectedProject.github}
                       target="_blank"

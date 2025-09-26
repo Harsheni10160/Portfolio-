@@ -1,8 +1,7 @@
-// src/components/About.jsx - CSS Version
 import React from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
-import './About.css'; // Assume you have some basic styles here
+import './About.css';
 
 const About = () => {
   const containerVariants = {
@@ -44,7 +43,6 @@ const About = () => {
     Git: 'devicon-git-plain colored',
     'VS Code': 'devicon-vscode-plain colored',
     Figma: 'devicon-figma-plain colored',
-    Photoshop: 'devicon-photoshop-plain colored',
     TypeScript: 'devicon-typescript-plain colored',
     'Three.js': 'devicon-threejs-original',
     Java: 'devicon-java-plain colored',
@@ -63,84 +61,83 @@ const About = () => {
           className="about-header"
         >
           <h2 className="about-title">About Me</h2>
-          <p className="about-description">
-            Get to know more about my background, skills, and what drives my passion for development.
-          </p>
         </motion.div>
 
-        <div className="about-content">
-          {/* About Text */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="about-text"
-          >
-            <motion.div variants={itemVariants}>
-              <h3>Hello! I'm Deva Harsheni</h3>
-              <p>{portfolioData.about.description}</p>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                or sharing my knowledge with the developer community. I believe in writing clean, maintainable code 
-                and creating user experiences that make a difference.
-              </p>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="status-indicator">
-              <div className="status-dot"></div>
-              <span>Available for opportunities</span>
-            </motion.div>
+        {/* Description Section - Now at the top */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="about-description-section"
+        >
+          <motion.div variants={itemVariants} className="about-intro">
+            <h3 className="about-name">Hello! I'm Deva Harsheni</h3>
+            <p className="about-main-text">{portfolioData.about.description}</p>
           </motion.div>
 
-          {/* Skills Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="skills-section"
-          >
-            {skillCategories.map((category, index) => (
-              <motion.div key={category.title} variants={itemVariants} className="skill-category">
-                <h4>{category.title}</h4>
-                <div className="skill-tags">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.span
-                      key={`${category.title}-${skillIndex}`}   // ✅ FIXED KEY
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: skillIndex * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                      className={`skill-tag ${category.className}`}
-                    >
-                      <span className="skill-icon-wrapper">
-                        <i className={deviconClassMap[skill] || 'devicon-plain'} aria-hidden="true"></i>
-                      </span>
-                      <span className="skill-label">{skill}</span>
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+          <motion.div variants={itemVariants}>
+            <p className="about-secondary-text">
+              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+              or sharing my knowledge with the developer community. I believe in writing clean, maintainable code 
+              and creating user experiences that make a difference.
+            </p>
+          </motion.div>
 
-            {/* Fun Stats */}
-            <motion.div variants={itemVariants} className="stats-grid">
+          <motion.div variants={itemVariants} className="status-indicator">
+            <div className="status-dot"></div>
+            <span>Available for opportunities</span>
+          </motion.div>
+        </motion.div>
+
+        {/* Tech Stacks Section - Now with prominent logos */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="tech-stacks-section"
+        >
+          <motion.h3 variants={itemVariants} className="section-title">Tech Stack</motion.h3>
+          
+          {skillCategories.map((category, index) => (
+            <motion.div key={category.title} variants={itemVariants} className="tech-category">
+              <h4 className="category-title">{category.title}</h4>
+              <div className="tech-grid">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={`${category.title}-${skillIndex}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: skillIndex * 0.1 }}
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    className={`tech-card ${category.className}`}
+                  >
+                    <div className="tech-icon">
+                      <i className={deviconClassMap[skill] || 'devicon-plain'} aria-hidden="true"></i>
+                    </div>
+                    <span className="tech-name">{skill}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Fun Stats */}
+          <motion.div variants={itemVariants} className="stats-section">
+            <div className="stats-grid">
               <div className="stat-card">
-                <div className="stat-number">15+</div>
+                <div className="stat-number">5+</div>
                 <div className="stat-label">Projects Completed</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">2+</div>
+                <div className="stat-number">1+</div>
                 <div className="stat-label">Years Experience</div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

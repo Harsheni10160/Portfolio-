@@ -10,7 +10,7 @@ export const portfolioData = {
   social: {
     github: "https://github.com/Harsheni10160",
     linkedin: "https://linkedin.com/in/deva-harsheni-singaravel-560a91356",
-    // resume: "/path-to-your-resume.pdf" // Put resume in public folder
+    resume: "./public/resume pdf[1].pdf" // Put resume in public folder
   },
 
   // About Section
@@ -20,7 +20,7 @@ export const portfolioData = {
                  frameworks and have a keen eye for design details.`,
     skills: {
       frontend: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
-      tools: ["Git", "VS Code", "Figma", "Photoshop"],
+      tools: ["Git", "VS Code", "Figma"],
       backend: ["Node.js", "Express", "MongoDB"],
       programs: ["Java", "Python", "C++"],
       learning: ["TypeScript", "Node.js", "Three.js"]
@@ -31,17 +31,16 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "E-Commerce Dashboard",
-      description: "A responsive admin dashboard for managing online store operations with real-time analytics.",
+      title: "Anime Typing Game",
+      description: " A Responsive Typing Game with Anime Theme, Real-time Leaderboard, and Engaging UI.",
       tech: ["React", "Chart.js", "Tailwind CSS", "Firebase"],
       features: [
-        "Real-time sales analytics",
-        "Product inventory management", 
-        "Responsive design for all devices"
+        "Real-time typing speed and accuracy tracking",
+        "Anime-themed UI with character animations",
+        "Global leaderboard with Firebase integration"
       ],
-      image: "/project1.jpg", // Add to public folder
-      demo: "https://your-demo-link.com",
-      github: "https://github.com/yourusername/project1",
+      image: "/project1.png", // Add to public folder
+      github: "https://github.com/Harsheni10160/Anime-typing-speed-testing-",
       status: "Completed"
     },
     {
@@ -55,7 +54,6 @@ export const portfolioData = {
         "Dark/light theme toggle"
       ],
       image: "/project2.jpg",
-      demo: "https://your-demo-link.com",
       github: "https://github.com/yourusername/project2", 
       status: "Completed"
     },
@@ -70,7 +68,6 @@ export const portfolioData = {
         "Progress tracking and analytics"
       ],
       image: "/project3.jpg",
-      demo: "https://your-demo-link.com",
       github: "https://github.com/yourusername/project3",
       status: "In Progress"
     }
